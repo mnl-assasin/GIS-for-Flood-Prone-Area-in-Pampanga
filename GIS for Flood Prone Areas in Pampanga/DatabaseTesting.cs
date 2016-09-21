@@ -12,6 +12,8 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 {
     public partial class DatabaseTesting : Form
     {
+        OleDbCommand command;
+        OleDbConnection connection;
         public DatabaseTesting()
         {
             InitializeComponent();
@@ -21,7 +23,15 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         {
             try
             {
-                
+                string con = @"Provider=Microsoft.ACE.OLEDB.12.0;
+                        Data Source=C:\Users\mleano\Documents\pampanga_gis.mdb;
+                        Persist Security Info=False;";
+                connection = new OleDbConnection(con);
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                    lblStatus.Text = "Connection Succesful!";
+                }
             }
             catch (Exception err)
             {

@@ -16,7 +16,8 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DatabaseTesting());
+            //Application.Run(new Login());
+            Application.Run(new Login());
         }
     }
 }
