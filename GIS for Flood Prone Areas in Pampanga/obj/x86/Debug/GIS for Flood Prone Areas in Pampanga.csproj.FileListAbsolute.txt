@@ -10,3 +10,6 @@ C:\Users\mleano\Desktop\MNL\2. C# Projects\GIS for Flood Prone Areas in Pampanga
 C:\Users\mleano\Desktop\MNL\2. C# Projects\GIS for Flood Prone Areas in Pampanga\GIS for Flood Prone Areas in Pampanga\obj\x86\Debug\GIS for Flood Prone Areas in Pampanga.exe
 C:\Users\mleano\Desktop\MNL\2. C# Projects\GIS for Flood Prone Areas in Pampanga\GIS for Flood Prone Areas in Pampanga\obj\x86\Debug\GIS for Flood Prone Areas in Pampanga.pdb
 C:\Users\mleano\Desktop\MNL\2. C# Projects\GIS for Flood Prone Areas in Pampanga\GIS for Flood Prone Areas in Pampanga\obj\x86\Debug\GIS for Flood Prone Areas in Pampanga.csprojResolveAssemblyReference.cache
+C:\Users\mleano\Desktop\MNL\2. C# Projects\GIS for Flood Prone Areas in Pampanga\GIS for Flood Prone Areas in Pampanga\obj\x86\Debug\GIS_for_Flood_Prone_Areas_in_Pampanga.ClientPanel.resources
+C:\Users\mleano\Desktop\MNL\2. C# Projects\GIS for Flood Prone Areas in Pampanga\GIS for Flood Prone Areas in Pampanga\obj\x86\Debug\GIS_for_Flood_Prone_Areas_in_Pampanga.NewReceiver.resources
+C:\Users\mleano\Desktop\MNL\2. C# Projects\GIS for Flood Prone Areas in Pampanga\GIS for Flood Prone Areas in Pampanga\obj\x86\Debug\GIS_for_Flood_Prone_Areas_in_Pampanga.ReceiverCMS.resources

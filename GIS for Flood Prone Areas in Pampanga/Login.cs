@@ -12,20 +12,39 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 {
     public partial class Login : Form
     {
+        UserAccounts uAccounts;
         public Login()
         {
             InitializeComponent();
+
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            uAccounts = new UserAccounts();
+        }
+
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
+
+            string result = uAccounts.Login(username, password);
+            if (!result.Equals("invalid"))
+            {
+                processResult(result);
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password!");
+            }
 
         }
 
@@ -34,5 +53,14 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
             new Register().Show();
             this.Hide();
         }
+
+        private void processResult(string result)
+        {
+            string[] userInfo = uAccounts.ParseUserInfo(result);
+            ClientPanel cPanel = new ClientPanel(userInfo);
+            cPanel.Show();
+            this.Hide();
+        }
+        
     }
 }

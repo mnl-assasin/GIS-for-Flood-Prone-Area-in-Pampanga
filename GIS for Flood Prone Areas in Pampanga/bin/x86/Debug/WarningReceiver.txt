@@ -1,0 +1,1 @@
+Candaba;recieve1;1234567;Brgy San Agustin|Candaba;recieve2;1234567;Brgy Mapaniqui|Candaba;recieve3;1234567;Brgy Sto Rosario|Candaba;recieve4;1234567;Brgy San Agustin|Candaba;recieve5;1234567;Brgy Mapaniqui|Candaba;recieve6;1234567;Brgy Sto Rosario|Candaba;recieve7;1234567;Brgy San Agustin|Candaba;recieve8;1234567;Brgy Mapaniqui|Candaba;recieve9;1234567;Brgy Sto Rosario|

@@ -52,6 +52,10 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
             String newAccount = userName + ";" + password + ";" + adminType + ";" + fName + ";" + mName + ";" + lName + ";" + gender + ";" + municpality + "|";
             content += newAccount;
             File.WriteAllText("UserAccounts.txt", content);
+            MessageBox.Show("Registered Succesfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClientPanel cPanel = new ClientPanel(newAccount.Split(';'));
+            cPanel.Show();
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -68,7 +72,6 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
               
                 content = File.ReadAllText("UserAccounts.txt");
                 accounts = content.Split('|');
-                MessageBox.Show("Size is: " + (accounts.Length - 1));
 
             }
             else
