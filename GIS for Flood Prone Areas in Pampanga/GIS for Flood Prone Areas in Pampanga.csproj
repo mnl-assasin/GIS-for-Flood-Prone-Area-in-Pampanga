@@ -86,6 +86,12 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="UserAccounts.cs" />
+    <EmbeddedResource Include="AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientPanel.resx">
       <DependentUpon>ClientPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +169,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ReceiverCMS.resx">
       <DependentUpon>ReceiverCMS.cs</DependentUpon>
@@ -196,6 +206,30 @@
       <ProductName>SQL Server Compact 4.0 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agustin_average.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agustin_high.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agustin_low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agustin_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapaniqui_average.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapaniqui_high.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapaniqui_low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapaniqui_normal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

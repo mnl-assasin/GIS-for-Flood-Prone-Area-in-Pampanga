@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="agustin_average" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agustin_average.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="agustin_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agustin_high.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="agustin_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agustin_low.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="agustin_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agustin_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mapaniqui_average" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mapaniqui_average.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mapaniqui_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mapaniqui_high.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mapaniqui_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mapaniqui_low.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mapaniqui_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mapaniqui_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

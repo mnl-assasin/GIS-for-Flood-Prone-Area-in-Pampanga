@@ -39,15 +39,15 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         {
             if (municipality.Equals("Candaba"))
             {
-                cboBrgy.Items.Insert(0, "Brgy San Agustin");
-                cboBrgy.Items.Insert(1, "Brgy Mapaniqui");
+                cboBrgy.Items.Insert(1, "Brgy San Agustin");
+                cboBrgy.Items.Insert(0, "Brgy Mapaniqui");
                 cboBrgy.Items.Insert(2, "Brgy Sto Rosario");
             }
             else if (municipality.Equals("Macabebe"))
             {
-                cboBrgy.Items.Insert(0, "Brgy Maniago");
-                cboBrgy.Items.Insert(1, "Brgy San Nicolas");
-                cboBrgy.Items.Insert(2, "Brgy Bulac");
+                cboBrgy.Items.Insert(1, "Brgy Maniago");
+                cboBrgy.Items.Insert(2, "Brgy San Nicolas");
+                cboBrgy.Items.Insert(0, "Brgy Bulac");
             }
             else if (municipality.Equals("Minalin"))
             {

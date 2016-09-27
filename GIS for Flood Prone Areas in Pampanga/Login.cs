@@ -13,6 +13,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
     public partial class Login : Form
     {
         UserAccounts uAccounts;
+        string[] accounts;
+        string[] userInfo;
+        
         public Login()
         {
             InitializeComponent();
@@ -22,6 +25,8 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         private void Login_Load(object sender, EventArgs e)
         {
             uAccounts = new UserAccounts();
+            accounts = uAccounts.getAccounts();
+           
         }
 
 
@@ -33,18 +38,33 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
+            Boolean isLogin = false;
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+            //MessageBox.Show("\"" + username + "\" : \"" + password + "\"");
+            for (int ctr = 0; ctr < accounts.Length - 1; ctr++)
+            {
+                userInfo = uAccounts.ParseUserInfo(accounts[ctr]);
+                //MessageBox.Show("\"" + userInfo[0] + "\" : \"" + userInfo[1] +"\"");
+                if (userInfo[0].Equals(username) && userInfo[1].Equals(password))
+                {
+                    processResult(accounts[ctr]);
+                    isLogin = true;
+                    break;
+                }
+            }
+            if(!isLogin)
+            MessageBox.Show("Invalid username or password!");
 
-            string result = uAccounts.Login(username, password);
-            if (!result.Equals("invalid"))
-            {
-                processResult(result);
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password!");
-            }
+            //string result = new UserAccounts().Login(username, password);
+            //if (!result.Equals("invalid"))
+            //{
+            //    processResult(result);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Invalid username or password!");
+            //}
 
         }
 
@@ -56,9 +76,14 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 
         private void processResult(string result)
         {
-            string[] userInfo = uAccounts.ParseUserInfo(result);
+            string[] userInfo = new UserAccounts().ParseUserInfo(result);
+            if(userInfo[2].Equals("Admin")){
+                AdminPanel aPanel = new AdminPanel(userInfo);
+                aPanel.Show();
+            }else{
             ClientPanel cPanel = new ClientPanel(userInfo);
             cPanel.Show();
+            }
             this.Hide();
         }
         

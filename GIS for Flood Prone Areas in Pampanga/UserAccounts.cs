@@ -19,6 +19,7 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 
                 content = File.ReadAllText("UserAccounts.txt");
                 accounts = content.Split('|');
+             
             }
         }
         public string Login(string userName, string password)
@@ -39,6 +40,16 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         public string[] ParseUserInfo(string userInfo)
         {
             return userInfo.Split(';');
+        }
+
+        public string[] getAccounts()
+        {
+            return accounts;
+        }
+
+        public void saveAccounts(string newAccount)
+        {
+            File.WriteAllText("UserAccounts.txt", newAccount);
         }
 
     }

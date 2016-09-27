@@ -29,54 +29,40 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         {
             InitializeComponent();
             this.municipality = municipality;
-            populateBrgy(municipality);
+            
             if (File.Exists(fileName))
             {
                 content = File.ReadAllText(fileName);     
-                loadData(content.Split('|'));
+                row = content.Split('|');
             }
+            populateBrgy(municipality);
         }
 
         private void populateBrgy(string municipality)
         {
+            
             if (municipality.Equals("Candaba"))
             {
-                cboBrgy.Items.Insert(0, "Brgy San Agustin");
-                cboBrgy.Items.Insert(1, "Brgy Mapaniqui");
-                cboBrgy.Items.Insert(2, "Brgy Sto Rosario");
+                cboBrgy.Items.Insert(0, "All Candaba");
+                cboBrgy.Items.Insert(1, "Brgy San Agustin");
+                cboBrgy.Items.Insert(2, "Brgy Mapaniqui");
+                cboBrgy.Items.Insert(3, "Brgy Sto Rosario");
             }
             else if (municipality.Equals("Macabebe"))
             {
-                cboBrgy.Items.Insert(0, "Brgy Maniago");
-                cboBrgy.Items.Insert(1, "Brgy San Nicolas");
-                cboBrgy.Items.Insert(2, "Brgy Bulac");
+                cboBrgy.Items.Insert(0, "All Macabebe");
+                cboBrgy.Items.Insert(1, "Brgy Maniago");
+                cboBrgy.Items.Insert(2, "Brgy San Nicolas");
+                cboBrgy.Items.Insert(3, "Brgy Bulac");
             }
             else if (municipality.Equals("Minalin"))
             {
-                cboBrgy.Items.Insert(0, "Brgy Batasan");
-                cboBrgy.Items.Insert(1, "Brgy Candelaria");
-                cboBrgy.Items.Insert(2, "Brgy San Franciso");
+                cboBrgy.Items.Insert(0, "All Minalin");
+                cboBrgy.Items.Insert(1, "Brgy Batasan");
+                cboBrgy.Items.Insert(2, "Brgy Candelaria");
+                cboBrgy.Items.Insert(3, "Brgy San Franciso");
             }
-
-        }
-
-        private void loadData(string[] row)
-        {
-            
-            DataTable table = new DataTable();
-            table.Columns.Add("Name", typeof(string));
-            table.Columns.Add("Number", typeof(string));
-            table.Columns.Add("Brgy", typeof(string));
-
-            for (ctr = 0; ctr < row.Length - 1; ctr++)
-            {
-                info = row[ctr].Split(';');
-                if (municipality.Equals(info[0]))
-                {
-                    table.Rows.Add(info[1], info[2], info[3]);
-                }
-            }
-            dataGridView1.DataSource = table;
+            cboBrgy.SelectedIndex = 0;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -116,6 +102,31 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
                 string a = row.Cells[col].Value.ToString();
                 MessageBox.Show(a);
             }
+        }
+
+        private void cboBrgy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cboBrgy.SelectedIndex;
+            MessageBox.Show("Index: " + index);
+
+            DataTable table = new DataTable();
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("Number", typeof(string));
+            table.Columns.Add("Brgy", typeof(string));
+
+            for (ctr = 0; ctr < row.Length - 1; ctr++)
+            {
+                info = row[ctr].Split(';');
+                if (municipality.Equals(info[0]))
+                {
+                    if(index == 0 || cboBrgy.SelectedItem.ToString().Equals(info[3]))
+                    table.Rows.Add(info[1], info[2], info[3]);
+                }
+            }
+            dataGridView1.DataSource = table;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }

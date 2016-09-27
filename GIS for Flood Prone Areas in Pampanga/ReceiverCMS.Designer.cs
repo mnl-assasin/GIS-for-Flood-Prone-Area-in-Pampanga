@@ -46,6 +46,7 @@
             this.cboBrgy.Name = "cboBrgy";
             this.cboBrgy.Size = new System.Drawing.Size(430, 28);
             this.cboBrgy.TabIndex = 0;
+            this.cboBrgy.SelectedIndexChanged += new System.EventHandler(this.cboBrgy_SelectedIndexChanged);
             // 
             // btnAdd
             // 
