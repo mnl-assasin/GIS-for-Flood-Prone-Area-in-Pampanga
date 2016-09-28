@@ -63,9 +63,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap agustin_average {
+        internal static System.Drawing.Bitmap candaba_baragay_bound {
             get {
-                object obj = ResourceManager.GetObject("agustin_average", resourceCulture);
+                object obj = ResourceManager.GetObject("candaba_baragay_bound", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap agustin_high {
+        internal static System.Drawing.Bitmap candaba_brgy1_average {
             get {
-                object obj = ResourceManager.GetObject("agustin_high", resourceCulture);
+                object obj = ResourceManager.GetObject("candaba_brgy1_average", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap agustin_low {
+        internal static System.Drawing.Bitmap candaba_brgy1_high {
             get {
-                object obj = ResourceManager.GetObject("agustin_low", resourceCulture);
+                object obj = ResourceManager.GetObject("candaba_brgy1_high", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap agustin_normal {
+        internal static System.Drawing.Bitmap candaba_brgy1_low {
             get {
-                object obj = ResourceManager.GetObject("agustin_normal", resourceCulture);
+                object obj = ResourceManager.GetObject("candaba_brgy1_low", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mapaniqui_average {
+        internal static System.Drawing.Bitmap candaba_brgy1_normal {
             get {
-                object obj = ResourceManager.GetObject("mapaniqui_average", resourceCulture);
+                object obj = ResourceManager.GetObject("candaba_brgy1_normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mapaniqui_high {
+        internal static System.Drawing.Bitmap candaba_brgy2_average {
             get {
-                object obj = ResourceManager.GetObject("mapaniqui_high", resourceCulture);
+                object obj = ResourceManager.GetObject("candaba_brgy2_average", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mapaniqui_low {
+        internal static System.Drawing.Bitmap candaba_brgy2_high {
             get {
-                object obj = ResourceManager.GetObject("mapaniqui_low", resourceCulture);
+                object obj = ResourceManager.GetObject("candaba_brgy2_high", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,59 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mapaniqui_normal {
+        internal static System.Drawing.Bitmap candaba_brgy2_low {
             get {
-                object obj = ResourceManager.GetObject("mapaniqui_normal", resourceCulture);
+                object obj = ResourceManager.GetObject("candaba_brgy2_low", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap candaba_brgy2_normal {
+            get {
+                object obj = ResourceManager.GetObject("candaba_brgy2_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap candaba_brgy3_average {
+            get {
+                object obj = ResourceManager.GetObject("candaba_brgy3_average", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap candaba_brgy3_high {
+            get {
+                object obj = ResourceManager.GetObject("candaba_brgy3_high", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap candaba_brgy3_low {
+            get {
+                object obj = ResourceManager.GetObject("candaba_brgy3_low", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap candaba_brgy3_normal {
+            get {
+                object obj = ResourceManager.GetObject("candaba_brgy3_normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

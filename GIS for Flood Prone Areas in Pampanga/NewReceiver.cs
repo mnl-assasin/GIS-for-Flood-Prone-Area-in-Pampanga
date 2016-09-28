@@ -13,7 +13,7 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
     public partial class NewReceiver : Form
     {
         string fileName = "WarningReceiver.txt";
-        string content;
+       string content;
         string municipality;
         public NewReceiver()
         {
@@ -39,15 +39,17 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         {
             if (municipality.Equals("Candaba"))
             {
-                cboBrgy.Items.Insert(1, "Brgy San Agustin");
+                
                 cboBrgy.Items.Insert(0, "Brgy Mapaniqui");
+                cboBrgy.Items.Insert(1, "Brgy San Agustin");
                 cboBrgy.Items.Insert(2, "Brgy Sto Rosario");
             }
             else if (municipality.Equals("Macabebe"))
             {
+                cboBrgy.Items.Insert(0, "Brgy Bulac");
                 cboBrgy.Items.Insert(1, "Brgy Maniago");
                 cboBrgy.Items.Insert(2, "Brgy San Nicolas");
-                cboBrgy.Items.Insert(0, "Brgy Bulac");
+                
             }
             else if (municipality.Equals("Minalin"))
             {
