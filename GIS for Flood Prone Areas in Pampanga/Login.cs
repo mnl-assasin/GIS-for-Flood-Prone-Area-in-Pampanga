@@ -53,24 +53,14 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
                     break;
                 }
             }
-            if(!isLogin)
-            MessageBox.Show("Invalid username or password!");
-
-            //string result = new UserAccounts().Login(username, password);
-            //if (!result.Equals("invalid"))
-            //{
-            //    processResult(result);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid username or password!");
-            //}
+            if (!isLogin)
+                MessageBox.Show("Invalid username or password!");
 
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            new Register().Show();
+            new Register("login").Show();
             this.Hide();
         }
 

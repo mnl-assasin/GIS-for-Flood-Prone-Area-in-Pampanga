@@ -12,19 +12,22 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 {
     public partial class Register : Form
     {
+        string origin;
         string content;
         string[] user;
         string[] accounts;
         string status;
         Boolean isEdit = false;
-        public Register()
+        public Register(string origin)
         {
             InitializeComponent();
+            this.origin = origin;
         }
 
-        public Register(string[] userInfo, string[] user)
+        public Register(string origin, string[] userInfo, string[] user)
         {
             InitializeComponent();
+            this.origin = origin;
             initializedEdit(userInfo);
             this.user = user;
 
@@ -103,7 +106,10 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            new Login().Show();
+            if (origin.Equals("login"))
+                new Login().Show();
+            else if (origin.Equals("admin"))
+                new AdminPanel(user).Show();
             this.Close();
 
         }

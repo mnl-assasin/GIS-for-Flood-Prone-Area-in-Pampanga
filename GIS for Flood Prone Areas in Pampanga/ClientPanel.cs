@@ -25,9 +25,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         int level = -1;
 
         static string normalWarning = "Normal Warning Message";
-        static string lowWarning = "Low Warning Message";
-        static string averageWarning = "Average Warning Message";
-        static string highWarning = "High Warning Message";
+        static string lowWarning = " is yellow flood alert please be ready for incoming flood";
+        static string averageWarning = " is orage flood alert please be ready for immediate evacuation needed";
+        static string highWarning = " is red flood alert, please keep calm and go to nearest high grounds and be safe.";
 
         string[] receiver;
 
@@ -35,6 +35,7 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         Bitmap[] bmpCandabaBrgy2 = { Properties.Resources.candaba_brgy2_normal, Properties.Resources.candaba_brgy2_low, Properties.Resources.candaba_brgy2_average, Properties.Resources.candaba_brgy2_high };
         Bitmap[] bmpCandabaBrgy3 = { Properties.Resources.candaba_brgy3_normal, Properties.Resources.candaba_brgy3_low, Properties.Resources.candaba_brgy3_average, Properties.Resources.candaba_brgy3_high };
 
+        bool isWarningDetected = false;
         private string[] warningMessage = {normalWarning, lowWarning, averageWarning, highWarning}; 
         public ClientPanel()
         {
@@ -56,6 +57,7 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
             cboSensorPort.DataSource = SerialPort.GetPortNames();
             cboGSM.DataSource = SerialPort.GetPortNames();
             loadReceiver();
+            panelCandaba.Enabled = true;
         }
 
         private void loadReceiver()
@@ -106,8 +108,6 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
                 serialPort2.Write("AT+CMGF=1\r");
                 btnGSMPort.Text = "Disconnect";
                 isGSMConnected = true;
-
-                sendSMS("+639350963933", "SENT FROM GSM MODULE");
             }
             else
             {
@@ -121,7 +121,8 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            string receivedData = serialPort1.ReadLine();
+            string receivedData = serialPort1.ReadLine().Trim();
+            MessageBox.Show(receivedData);
             parseReceivedData(receivedData);
         }
 
@@ -129,25 +130,26 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         {
             level = -1;
             string warningLevel = "";
-            if (receivedData.Equals("normal"))
+            if (receivedData.Equals("0"))
             {
                 level = 0;
                 warningLevel = "A Normal water level state has been read by the sensor";
             }
-            else if (receivedData.Equals("low"))
+            else if (receivedData.Equals("1"))
             {
                 level = 1;
-                warningLevel = "A low water level state has been read by the sensor";
+                warningLevel = "A yellow flood warning has been detected";
+                
             }
-            else if (receivedData.Equals("average"))
+            else if (receivedData.Equals("2"))
             {
                 level = 2;
-                warningLevel = "An average water level state has been read by the sensor";
+                warningLevel = "An orange flood warning has been detected";
             }
-            else if (receivedData.Equals("high"))
+            else if (receivedData.Equals("3"))
             {
                 level = 3;
-                warningLevel = "A high water level state has been read by the sensor";
+                warningLevel = "A red flood warning has been detected";
             }
 
             if (level != -1)
@@ -155,7 +157,7 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
                 DialogResult result = MessageBox.Show(warningLevel, "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (result == DialogResult.OK)
                 {
-                    panelCandaba.Enabled = true;
+                    isWarningDetected = true;
                 }
             }
         }
@@ -178,21 +180,29 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
 
         private void candabaBrgy1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Brgy 1");
-            candabaBrgy1.Image = bmpCandabaBrgy1[level];
-            broadcastMessage("Brgy Mapaniqui");
+            if (isWarningDetected)
+            {
+                candabaBrgy1.Image = bmpCandabaBrgy1[level];
+                broadcastMessage("Brgy Sto Rosario");
+            }
         }
 
         private void candabaBrgy2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Brgy 2");
-            broadcastMessage("Brgy San Agustin");
+            if (isWarningDetected)
+            {
+                candabaBrgy2.Image = bmpCandabaBrgy2[level];
+                broadcastMessage("Brgy San Agustin");
+            }
         }
 
         private void candabaBrgy3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Brgy 3");
-            broadcastMessage("Brgy Sto Rosario");
+            if (isWarningDetected)
+            {
+                candabaBrgy3.Image = bmpCandabaBrgy3[level];
+                broadcastMessage("Brgy Salapunga");
+            }
         }
 
         private void broadcastMessage(string brgy)
@@ -200,7 +210,9 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
             // Brgy + Warning message;
             // number where to send;
 
-            string message = brgy + " " + warningMessage[level];
+            //string message = brgy + " " + warningMessage[level];
+            loadReceiver();
+            string message = "Please be alert the " + brgy + warningMessage[level];
             for (int ctr = 0; ctr < receiver.Length - 1; ctr++)
             {
                 string[] receiverInfo = receiver[ctr].Split(';');
@@ -208,21 +220,37 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
                 {
                     string name = receiverInfo[1];
                     string number = receiverInfo[2];
-                    MessageBox.Show("MESSAGE:\n" + message + "\nReceiver name: " + name + "\nReceiver number: "+ number);
+                    MessageBox.Show( message + "\nReceiver name: " + name + "\nReceiver number: "+ number);
                 }
             }
+            isWarningDetected = false;
 
         }
 
         private void sendSMS(string number, string message)
         {
-            Thread.Sleep(1000);
-            serialPort2.Write("AT+CMGS=\"" + number + "\"\r\n");
-            Thread.Sleep(1000);
-            serialPort2.Write(message + "\x1A");
-            Thread.Sleep(2000);
-            MessageBox.Show("Message Sent!");
+            if (serialPort2.IsOpen)
+            {
+                Thread.Sleep(1000);
+                serialPort2.Write("AT+CMGS=\"" + number + "\"\r\n");
+                Thread.Sleep(1000);
+                serialPort2.Write(message + "\x1A");
+                Thread.Sleep(2000);
+                MessageBox.Show("Message Sent!");
+            }
         
+        }
+
+        private void btnSendWarning_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                Application.Restart();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
     }

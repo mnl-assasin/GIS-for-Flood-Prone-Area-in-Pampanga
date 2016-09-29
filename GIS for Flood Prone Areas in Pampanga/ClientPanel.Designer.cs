@@ -43,34 +43,39 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panelCandaba = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.candabaBrgy2 = new System.Windows.Forms.PictureBox();
             this.candabaBrgy3 = new System.Windows.Forms.PictureBox();
             this.candabaBrgy1 = new System.Windows.Forms.PictureBox();
-            this.candabaBrgy2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panelCandaba.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.candabaBrgy2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.candabaBrgy3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.candabaBrgy1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.candabaBrgy2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSendWarning
             // 
-            this.btnSendWarning.Location = new System.Drawing.Point(17, 282);
+            this.btnSendWarning.Location = new System.Drawing.Point(17, 373);
             this.btnSendWarning.Name = "btnSendWarning";
-            this.btnSendWarning.Size = new System.Drawing.Size(148, 40);
+            this.btnSendWarning.Size = new System.Drawing.Size(148, 27);
             this.btnSendWarning.TabIndex = 2;
-            this.btnSendWarning.Text = "Send Warning";
+            this.btnSendWarning.Text = "Logout";
             this.btnSendWarning.UseVisualStyleBackColor = true;
+            this.btnSendWarning.Click += new System.EventHandler(this.btnSendWarning_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(17, 328);
+            this.btnExit.Location = new System.Drawing.Point(17, 337);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(148, 40);
+            this.btnExit.Size = new System.Drawing.Size(148, 30);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblAccountName
             // 
@@ -172,6 +177,9 @@
             // 
             this.panelCandaba.BackgroundImage = global::GIS_for_Flood_Prone_Areas_in_Pampanga.Properties.Resources.candaba_baragay_bound;
             this.panelCandaba.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCandaba.Controls.Add(this.label3);
+            this.panelCandaba.Controls.Add(this.label2);
+            this.panelCandaba.Controls.Add(this.label1);
             this.panelCandaba.Controls.Add(this.candabaBrgy2);
             this.panelCandaba.Controls.Add(this.candabaBrgy3);
             this.panelCandaba.Controls.Add(this.candabaBrgy1);
@@ -181,6 +189,46 @@
             this.panelCandaba.Size = new System.Drawing.Size(601, 391);
             this.panelCandaba.TabIndex = 18;
             this.panelCandaba.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(475, 145);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(156, 304);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(118, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "label1";
+            // 
+            // candabaBrgy2
+            // 
+            this.candabaBrgy2.Image = global::GIS_for_Flood_Prone_Areas_in_Pampanga.Properties.Resources.candaba_brgy2_normal;
+            this.candabaBrgy2.Location = new System.Drawing.Point(83, 210);
+            this.candabaBrgy2.Name = "candabaBrgy2";
+            this.candabaBrgy2.Size = new System.Drawing.Size(177, 180);
+            this.candabaBrgy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.candabaBrgy2.TabIndex = 23;
+            this.candabaBrgy2.TabStop = false;
+            this.candabaBrgy2.Click += new System.EventHandler(this.candabaBrgy2_Click);
             // 
             // candabaBrgy3
             // 
@@ -205,17 +253,6 @@
             this.candabaBrgy1.TabStop = false;
             this.candabaBrgy1.Click += new System.EventHandler(this.candabaBrgy1_Click);
             // 
-            // candabaBrgy2
-            // 
-            this.candabaBrgy2.Image = global::GIS_for_Flood_Prone_Areas_in_Pampanga.Properties.Resources.candaba_brgy2_normal;
-            this.candabaBrgy2.Location = new System.Drawing.Point(83, 210);
-            this.candabaBrgy2.Name = "candabaBrgy2";
-            this.candabaBrgy2.Size = new System.Drawing.Size(177, 180);
-            this.candabaBrgy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.candabaBrgy2.TabIndex = 23;
-            this.candabaBrgy2.TabStop = false;
-            this.candabaBrgy2.Click += new System.EventHandler(this.candabaBrgy2_Click);
-            // 
             // ClientPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -238,9 +275,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.panelCandaba.ResumeLayout(false);
+            this.panelCandaba.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.candabaBrgy2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.candabaBrgy3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.candabaBrgy1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.candabaBrgy2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +303,8 @@
         private System.Windows.Forms.PictureBox candabaBrgy1;
         private System.Windows.Forms.PictureBox candabaBrgy3;
         private System.Windows.Forms.PictureBox candabaBrgy2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

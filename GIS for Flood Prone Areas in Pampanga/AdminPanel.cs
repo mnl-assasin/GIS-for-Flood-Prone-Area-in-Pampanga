@@ -118,7 +118,7 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
                  string[] userInfo = uAccounts.ParseUserInfo(accounts[ctr]);
                  if (userInfo[0].Equals(username))
                  {
-                     Register register = new Register(userInfo, user);
+                     Register register = new Register("admin",userInfo, user);
                      register.Show();
                      Close();
                      break;
@@ -159,6 +159,13 @@ namespace GIS_for_Flood_Prone_Areas_in_Pampanga
         {
             ClientPanel cPanel = new ClientPanel(user);
             cPanel.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                Application.Restart();
         }
 
 

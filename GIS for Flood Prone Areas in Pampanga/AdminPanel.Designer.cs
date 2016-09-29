@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.SuspendLayout();
@@ -52,14 +53,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search by";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(8, 30);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 27);
-            this.textBox1.TabIndex = 1;
-            // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(232, 29);
@@ -68,6 +61,14 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(8, 30);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(217, 27);
+            this.textBox1.TabIndex = 1;
             // 
             // dataGridUsers
             // 
@@ -102,17 +103,28 @@
             // 
             this.button1.Location = new System.Drawing.Point(13, 304);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(549, 28);
+            this.button1.Size = new System.Drawing.Size(268, 28);
             this.button1.TabIndex = 4;
             this.button1.Text = "Dashboard";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(287, 304);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(275, 28);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Logout";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 346);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
